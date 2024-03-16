@@ -25,6 +25,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
 
+    private AudioSource audioSource;
+
     private void Start()
     {
         // 计算屏幕的最小和最大坐标
@@ -32,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
         maxScreenPos = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, 0));
 
         p_Animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -68,6 +71,7 @@ public class PlayerMovement : MonoBehaviour
             jumpBufferCounter = jumpBufferTime;
             p_Animator.SetTrigger("Jump");
             p_Animator.SetBool("Fall", true);
+            audioSource.PlayOneShot(audioSource.clip);
         }
         else
         {
