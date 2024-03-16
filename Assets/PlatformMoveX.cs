@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public class PlatformMover1 : MonoBehaviour
+public class PlatformMoveX : MonoBehaviour
 {
     public float speed = 0f;
-    public float minY = 0f;
-    public float maxY = 0f;
+    public float minX = 0f;
+    public float maxX = 0f;
 
     private void Update()
     {
@@ -12,17 +12,17 @@ public class PlatformMover1 : MonoBehaviour
         Vector3 position = transform.position;
 
         // Move the platform to the left.
-        position.y -= speed * Time.deltaTime;
+        position.x -= speed * Time.deltaTime;
 
         // Check if the platform has reached the left edge of the range.
-        if (position.y < minY)
+        if (position.x < minX)
         {
             // Reverse the direction of the platform.
             speed = -speed;
         }
 
         // Check if the platform has reached the right edge of the range.
-        if (position.y > maxY)
+        if (position.x > maxX)
         {
             // Reverse the direction of the platform.
             speed = -speed;
