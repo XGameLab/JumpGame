@@ -220,6 +220,7 @@ GameObject:
   - component: {fileID: 68224922}
   - component: {fileID: 68224925}
   - component: {fileID: 68224926}
+  - component: {fileID: 68224927}
   m_Layer: 0
   m_Name: Goal
   m_TagString: Goal
@@ -333,7 +334,7 @@ Transform:
   m_GameObject: {fileID: 68224920}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 2.7, z: -2}
+  m_LocalPosition: {x: 1, y: 2.91, z: -2}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -374,6 +375,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &68224927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 68224920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e49fc7fcaf70ab74e8420c2982e92a28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.4
+  minY: 2.3
+  maxY: 3.1
 --- !u!1 &155646019
 GameObject:
   m_ObjectHideFlags: 0
