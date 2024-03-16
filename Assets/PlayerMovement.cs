@@ -97,7 +97,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y - 0.5f);
     }
 
@@ -132,5 +131,8 @@ public class PlayerMovement : MonoBehaviour
             p_Animator.SetBool("Fall", false);
         }
     }
+<<<<<<< HEAD
     
+=======
+>>>>>>> 00d54229f429370b7d36c919f2595819cfa85a0f
 }
