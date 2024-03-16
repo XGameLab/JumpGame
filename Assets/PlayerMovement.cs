@@ -43,6 +43,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Horizontal"))
         {
             p_Animator.SetTrigger("Run");
+            p_Animator.SetBool("Fall", false);
         }
 
         if (Input.GetButtonDown("Jump"))
