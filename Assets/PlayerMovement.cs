@@ -17,27 +17,26 @@ public class PlayerMovement : MonoBehaviour
     private float jumpBufferTime = 0.2f;
     private float jumpBufferCounter;
 
-<<<<<<< HEAD
     private Vector3 minScreenPos;
     private Vector3 maxScreenPos;
-=======
     private Animator p_Animator = null;    
->>>>>>> 6384e39f42c321de3c4ae3ed4b53554a8284915c
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
      
-    private void Start()
-    {
-        p_Animator = GetComponent<Animator>();
-    }
+    // private void Start()
+    // {
+    //     p_Animator = GetComponent<Animator>();
+    // }
 
     private void Start()
     {
         // 计算屏幕的最小和最大坐标
         minScreenPos = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, 0));
         maxScreenPos = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, 0));
+
+        p_Animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -130,22 +129,20 @@ public class PlayerMovement : MonoBehaviour
         isJumping = false;
     }
 
-<<<<<<< HEAD
     private void OnCollisionEnter2D(Collision2D collision)
-{
-    if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
     {
-        jumpCount = 0;
-    }
-}
-=======
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Ground") 
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
+            jumpCount = 0;
             p_Animator.SetBool("Fall", false);
-        }   
+        }
     }
+    // void OnCollisionEnter2D(Collision2D collision)
+    // {
+    //     if (collision.gameObject.tag == "Ground") 
+    //     {
+    //         p_Animator.SetBool("Fall", false);
+    //     }   
+    // }
 
->>>>>>> 6384e39f42c321de3c4ae3ed4b53554a8284915c
 }
