@@ -16,9 +16,16 @@ public class PlayerMovement : MonoBehaviour
     private float jumpBufferTime = 0.2f;
     private float jumpBufferCounter;
 
+    private Animator p_Animator = null;    
+
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
+     
+    private void Start()
+    {
+        p_Animator = GetComponent<Animator>();
+    }
 
     private void Update()
     {
@@ -33,9 +40,16 @@ public class PlayerMovement : MonoBehaviour
             coyoteTimeCounter -= Time.deltaTime;
         }
 
+        if (Input.GetButtonDown("Horizontal"))
+        {
+            p_Animator.SetTrigger("Run");
+        }
+
         if (Input.GetButtonDown("Jump"))
         {
             jumpBufferCounter = jumpBufferTime;
+            p_Animator.SetTrigger("Jump");
+            p_Animator.SetBool("Fall", true);
         }
         else
         {
@@ -88,4 +102,13 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(0.4f);
         isJumping = false;
     }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Ground") 
+        {
+            p_Animator.SetBool("Fall", false);
+        }   
+    }
+
 }
