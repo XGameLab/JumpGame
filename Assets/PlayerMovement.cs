@@ -17,12 +17,21 @@ public class PlayerMovement : MonoBehaviour
     private float jumpBufferTime = 0.2f;
     private float jumpBufferCounter;
 
+<<<<<<< HEAD
     private Vector3 minScreenPos;
     private Vector3 maxScreenPos;
+=======
+    private Animator p_Animator = null;    
+>>>>>>> 6384e39f42c321de3c4ae3ed4b53554a8284915c
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
+     
+    private void Start()
+    {
+        p_Animator = GetComponent<Animator>();
+    }
 
     private void Start()
     {
@@ -54,9 +63,17 @@ public class PlayerMovement : MonoBehaviour
             coyoteTimeCounter -= Time.deltaTime;
         }
 
+        if (Input.GetButtonDown("Horizontal"))
+        {
+            p_Animator.SetTrigger("Run");
+            p_Animator.SetBool("Fall", false);
+        }
+
         if (Input.GetButtonDown("Jump"))
         {
             jumpBufferCounter = jumpBufferTime;
+            p_Animator.SetTrigger("Jump");
+            p_Animator.SetBool("Fall", true);
         }
         else
         {
@@ -113,6 +130,7 @@ public class PlayerMovement : MonoBehaviour
         isJumping = false;
     }
 
+<<<<<<< HEAD
     private void OnCollisionEnter2D(Collision2D collision)
 {
     if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
@@ -120,4 +138,14 @@ public class PlayerMovement : MonoBehaviour
         jumpCount = 0;
     }
 }
+=======
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Ground") 
+        {
+            p_Animator.SetBool("Fall", false);
+        }   
+    }
+
+>>>>>>> 6384e39f42c321de3c4ae3ed4b53554a8284915c
 }

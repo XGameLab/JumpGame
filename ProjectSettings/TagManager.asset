@@ -4,7 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
+<<<<<<< HEAD
   - Goal
+=======
+  - Ground
+>>>>>>> 6384e39f42c321de3c4ae3ed4b53554a8284915c
   layers:
   - Default
   - TransparentFX
