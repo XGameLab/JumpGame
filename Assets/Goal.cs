@@ -33,15 +33,15 @@ public class Goal : MonoBehaviour
             int totalScenes = SceneManager.sceneCountInBuildSettings;
             Debug.Log("totalScenes： " + totalScenes);
 
-            // 检查是否已经加载过所有场景
-            if (goalCount >= totalScenes - 1)
-            {
-                Debug.Log("All Scenes Loaded!");
-                // 所有场景都已加载，退出游戏
-                UnityEditor.EditorApplication.isPlaying = false;
-                Application.Quit();
-                return;
-            }
+            // // 检查是否已经加载过所有场景
+            // if (goalCount >= totalScenes - 1)
+            // {
+            //     Debug.Log("All Scenes Loaded!");
+            //     // 所有场景都已加载，退出游戏
+            //     //UnityEditor.EditorApplication.isPlaying = false;
+            //     Application.Quit();
+            //     return;
+            // }
 
 
             // 生成一个不超过场景数量范围且不等于当前场景索引的随机数

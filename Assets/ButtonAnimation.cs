@@ -6,11 +6,13 @@ public class ButtonAnimation : MonoBehaviour
 {
     Animator anim;
     private bool isPlayer = false;
+    private AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
     {
         anim = gameObject.GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -25,6 +27,7 @@ public class ButtonAnimation : MonoBehaviour
         {
             anim.SetTrigger("PlayerOn");
             isPlayer = true;
+             audioSource.PlayOneShot(audioSource.clip);
         }
 
         if (isPlayer)

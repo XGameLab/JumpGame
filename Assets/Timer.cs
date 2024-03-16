@@ -16,6 +16,8 @@ public class Timer : MonoBehaviour
     {
         timerCount = true;
         isGameover = false;
+      Screen.SetResolution(480, 720, false);
+
     }
 
     void Update()
@@ -38,7 +40,7 @@ public class Timer : MonoBehaviour
     IEnumerator GameOver(float delay)
     {
         yield return new WaitForSeconds(delay);
-        UnityEditor.EditorApplication.isPlaying = false;
-        Application.Quit();
+        //UnityEditor.EditorApplication.isPlaying = false;
+        //Application.Quit();
     }
 }
