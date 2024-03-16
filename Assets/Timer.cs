@@ -16,6 +16,8 @@ public class Timer : MonoBehaviour
     {
         timerCount = true;
         isGameover = false;
+      Screen.SetResolution(480, 720, false);
+
     }
 
     void Update()
@@ -23,12 +25,12 @@ public class Timer : MonoBehaviour
         if (0 <= time && timerCount ) 
         {
             time -= Time.deltaTime;
-            timeText.text = "Time: " + time.ToString("F1");
+            timeText.text = time.ToString("F1");
         }
 
         else if(0 >= time && timerCount )
         {
-            timeText.text = "TimeUp!";
+            // timeText.text = "TimeUp!";
             StartCoroutine(GameOver(2f));
             gameoverMessage.SetActive(true);
             isGameover = true;
@@ -38,7 +40,7 @@ public class Timer : MonoBehaviour
     IEnumerator GameOver(float delay)
     {
         yield return new WaitForSeconds(delay);
-        UnityEditor.EditorApplication.isPlaying = false;
-        Application.Quit();
+        //UnityEditor.EditorApplication.isPlaying = false;
+        //Application.Quit();
     }
 }

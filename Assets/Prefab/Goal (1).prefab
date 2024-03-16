@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 2109034608020155542}
   - component: {fileID: 4727667796565079091}
   - component: {fileID: 3886901798971582947}
-  - component: {fileID: 206417800179624252}
-  - component: {fileID: -7419079023628389599}
+  - component: {fileID: -5344961075017008459}
+  - component: {fileID: -6039900851664350413}
   m_Layer: 0
   m_Name: Goal (1)
   m_TagString: Goal
@@ -148,8 +148,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   winMessage: {fileID: 0}
   message: You Win!
-  coin: {fileID: 206417800179624252}
-  scean: {fileID: -7419079023628389599}
+  coin: {fileID: -5344961075017008459}
+  sceneChange: {fileID: -6039900851664350413}
 --- !u!95 &3886901798971582947
 Animator:
   serializedVersion: 5
@@ -171,7 +171,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!82 &206417800179624252
+--- !u!82 &-5344961075017008459
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -267,7 +267,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!82 &-7419079023628389599
+--- !u!82 &-6039900851664350413
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
