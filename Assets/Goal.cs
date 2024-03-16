@@ -10,9 +10,14 @@ public class Goal : MonoBehaviour
     private static int goalCount = 0;
     private int sceneNum = 0;
     private int currentSceneIndex; // 记录当前场景的索引
+<<<<<<< HEAD
     private bool isPlayingMusic = false;
     [SerializeField] AudioSource coin;//コインを取った時の音
     [SerializeField] AudioSource sceneChange;//シーン切り替わりの音
+=======
+    [SerializeField] AudioSource coin;//コインを取った時の音
+    [SerializeField] AudioSource scean;//シーン切り替わりの音
+>>>>>>> 3c300926bdd539ee8865fbeaa728d89ef6100a52
 
     void Start()
     {
@@ -53,6 +58,7 @@ public class Goal : MonoBehaviour
             // 等待3秒
             StartCoroutine(LoadSceneAfterDelay(2f));
             //二秒後に音楽が鳴る
+<<<<<<< HEAD
             Invoke("MusicScene", 1.2f);
         }
     }
@@ -65,6 +71,16 @@ public class Goal : MonoBehaviour
             sceneChange.Play();
         }
         isPlayingMusic = true;
+=======
+            Invoke("MusicScean", 1.2f);
+        }
+    }
+
+    private void MusicScean()
+    {
+        // 音楽を再生
+        scean.Play();
+>>>>>>> 3c300926bdd539ee8865fbeaa728d89ef6100a52
     }
 
     IEnumerator LoadSceneAfterDelay(float delay)
