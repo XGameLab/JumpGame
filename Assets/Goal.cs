@@ -19,11 +19,11 @@ public class Goal : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" && !Timer.isGameover)
         {
-
             Debug.Log(message);
             winMessage.SetActive(true);
+            Timer.timerCount = false;
 
             // 获取所有已存在场景的数量
             int totalScenes = SceneManager.sceneCountInBuildSettings;
