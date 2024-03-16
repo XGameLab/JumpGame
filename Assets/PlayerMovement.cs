@@ -20,10 +20,12 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 minScreenPos;
     private Vector3 maxScreenPos;
     private Animator p_Animator = null;    
+    
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
+    private AudioSource audioSource;
 
     private void Start()
     {
@@ -32,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
         maxScreenPos = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, 0));
 
         p_Animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -68,6 +71,7 @@ public class PlayerMovement : MonoBehaviour
             jumpBufferCounter = jumpBufferTime;
             p_Animator.SetTrigger("Jump");
             p_Animator.SetBool("Fall", true);
+            audioSource.PlayOneShot(audioSource.clip);
         }
         else
         {
@@ -131,8 +135,4 @@ public class PlayerMovement : MonoBehaviour
             p_Animator.SetBool("Fall", false);
         }
     }
-<<<<<<< HEAD
-    
-=======
->>>>>>> 00d54229f429370b7d36c919f2595819cfa85a0f
 }

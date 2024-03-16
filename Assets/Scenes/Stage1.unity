@@ -2641,6 +2641,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   winMessage: {fileID: 387087976}
   message: You Win!
+  coin: {fileID: 0}
+  scean: {fileID: 0}
 --- !u!1 &778867479
 GameObject:
   m_ObjectHideFlags: 0
@@ -3528,11 +3530,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7279417716791790250, guid: 2149c581ddabe274abd4b902f8f8c464, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.1
+      value: -0.01
       objectReference: {fileID: 0}
     - target: {fileID: 7279417716791790250, guid: 2149c581ddabe274abd4b902f8f8c464, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.64
+      value: -3.81
       objectReference: {fileID: 0}
     - target: {fileID: 7279417716791790250, guid: 2149c581ddabe274abd4b902f8f8c464, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4203,7 +4205,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
