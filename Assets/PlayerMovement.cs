@@ -20,12 +20,10 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 minScreenPos;
     private Vector3 maxScreenPos;
     private Animator p_Animator = null;    
-    
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
-    private AudioSource audioSource;
 
     private AudioSource audioSource;
 
