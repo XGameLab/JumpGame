@@ -24,11 +24,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
-     
-    // private void Start()
-    // {
-    //     p_Animator = GetComponent<Animator>();
-    // }
 
     private void Start()
     {
@@ -102,7 +97,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y - 0.5f);
     }
 
@@ -137,12 +131,4 @@ public class PlayerMovement : MonoBehaviour
             p_Animator.SetBool("Fall", false);
         }
     }
-    // void OnCollisionEnter2D(Collision2D collision)
-    // {
-    //     if (collision.gameObject.tag == "Ground") 
-    //     {
-    //         p_Animator.SetBool("Fall", false);
-    //     }   
-    // }
-
 }
